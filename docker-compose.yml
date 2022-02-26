@@ -56,7 +56,7 @@ services:
       - certbot-etc:/etc/letsencrypt
       - certbot-var:/var/lib/letsencrypt
       - wordpress:/var/www/html
-    command: certonly --webroot --webroot-path=/var/www/html --email $CERTBOT_EMAIL --agree-tos --no-eff-email --force-renewal ${for i in $NGINX_HOSTS; do echo  -n "-d $i "; done}
+    command: certonly --webroot --webroot-path=/var/www/html --email $$CERTBOT_EMAIL --agree-tos --no-eff-email --force-renewal $${for i in $$NGINX_HOSTS; do echo  -n "-d $$i "; done}
 
 volumes:
   certbot-etc:
