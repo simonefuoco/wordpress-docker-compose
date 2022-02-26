@@ -60,6 +60,7 @@ services:
 
 volumes:
   certbot-etc:
+  certbot-var:
   wordpress:
   dbdata:
 
